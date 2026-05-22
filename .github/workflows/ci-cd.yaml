@@ -8,6 +8,9 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    permissions:
+          contents: read
+          packages: write
 
     steps:
       - name: Checkout Repository Code
@@ -22,8 +25,8 @@ jobs:
 
       - name: Build and Tag Docker Image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/echo-api:latest .
+          docker build -t ghcr.io/${{ github.repository_owner }}/my-api:latest .
 
       - name: Push Docker Image to GHCR
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}/echo-api:latest
+          docker push ghcr.io/${{ github.repository_owner }}/my-api:latest
