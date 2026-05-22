@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: my-deployment
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: my-api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: my-api
+    spec:
+      containers:
+        - name: my-api
+          image: ghcr.io/markoulinoss/echo-api:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+          envFrom:
+            - configMapRef:
+                name: my-config
+            - secretRef:
+                name: my-secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
