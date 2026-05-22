@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: my-api
-          image: ghcr.io/markoulinoss/echo-api:latest
+          image: ghcr.io/markoulinoss/my-api:latest
           ports:
             - containerPort: 3000
           resources:
