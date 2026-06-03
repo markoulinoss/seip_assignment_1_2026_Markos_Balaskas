@@ -1,4 +1,4 @@
-# Echo API - Cloud Native Deployment
+# SEIP Assignment 1 – Docker, GitHub Actions, GHCR & Kubernetes
 
 ## Prerequisites
 - Docker
@@ -48,3 +48,9 @@ curl http://localhost:8080
 # Health check endpoint
 curl http://localhost:8080/health
 ```
+
+## Documentation
+
+The complete assignment report covering Tasks 1–4 is available in the `resources/` directory:
+
+- `resources/Software_Engineering_in_Practice_Assignment_1_2026.pdf`
