@@ -53,4 +53,4 @@ curl http://localhost:8080/health
 
 The complete assignment report covering Tasks 1–4 is available in the `resources/` directory:
 
-- `resources/Software_Engineering_in_Practice_Assignment_1_2026.pdf`
+- `resources/resources/seip_assignment_1_2026_Markos_Balaskas.pdf`
